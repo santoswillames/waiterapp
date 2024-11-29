@@ -1,14 +1,12 @@
 import { Router } from 'express'
+import { listCategoriesController } from './app/controllers/categories/list-categories-controller'
+import { createCategoriesController } from './app/controllers/categories/create-categories-controller'
 
 export const router = Router()
 
-router.get('/categories', (req, res) => {
-  res.send('Categoria')
-})
+router.get('/categories', listCategoriesController)
 
-router.post('/categories', (req, res) => {
-  res.send(' Create Categoria')
-})
+router.post('/categories', createCategoriesController)
 
 router.get('/products', (req, res) => {
   res.send('Produtos')
