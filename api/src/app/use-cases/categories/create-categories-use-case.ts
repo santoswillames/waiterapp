@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Category } from '@/app/models/category'
+import type { ICategoryRepository } from '@/app/repositories/category-repository'
 import type { Types } from 'mongoose'
 
 interface ICreateCategoryUseCaseRequest {
@@ -14,11 +15,13 @@ interface ICreateCategoryUseCaseResponse {
 }
 
 export class CreateCategoryUseCase {
+  constructor(private categoryRepository: ICategoryRepository) {}
+
   async execute({
     nameRequest,
     iconRequest,
   }: ICreateCategoryUseCaseRequest): Promise<ICreateCategoryUseCaseResponse> {
-    const { _id, name, icon } = await Category.create({
+    const { _id, name, icon } = await this.categoryRepository.create({
       name: nameRequest,
       icon: iconRequest,
     })
