@@ -9,8 +9,8 @@ interface ICreateCategoryUseCaseRequest {
 
 interface ICreateCategoryUseCaseResponse {
   _id: Types.ObjectId
-  name: string | null | undefined
-  icon: string | null | undefined
+  name: string
+  icon: string
 }
 
 export class CreateCategoryUseCase {

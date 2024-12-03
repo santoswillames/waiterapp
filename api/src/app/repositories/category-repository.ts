@@ -7,8 +7,8 @@ export interface ICreateCategory {
 
 export interface ICategory {
   _id: Types.ObjectId
-  name: string | null | undefined
-  icon: string | null | undefined
+  name: string
+  icon: string
 }
 
 export interface ICategoryRepository {

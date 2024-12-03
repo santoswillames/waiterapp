@@ -5,11 +5,11 @@ export const Category = model(
   new Schema({
     name: {
       type: String,
-      requerid: true,
+      required: true,
     },
     icon: {
       type: String,
-      requerid: true,
+      required: true,
     },
   }),
 )

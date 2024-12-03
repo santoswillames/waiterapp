@@ -3,8 +3,8 @@ import type { Types } from 'mongoose'
 
 interface IListCategoryUseCaseResponse {
   _id: Types.ObjectId
-  name: string | null | undefined
-  icon: string | null | undefined
+  name: string
+  icon: string
 }
 
 export class ListCategoriesUseCase {

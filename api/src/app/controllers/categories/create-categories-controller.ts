@@ -16,9 +16,9 @@ export async function createCategoriesController(req: Request, res: Response) {
       nameRequest: name,
     })
 
-    res.send(category)
+    res.json(category)
   } catch (error) {
     console.log(error)
-    res.status(500).send({ messaga: 'Internal Server Error' })
+    res.status(500).json({ messaga: 'Internal Server Error' })
   }
 }
