@@ -1,10 +1,10 @@
 import { Router } from 'express'
-import { listCategoriesController } from './app/controllers/categories/list-categories-controller'
+import { findAllCategoriesController } from './app/controllers/categories/list-categories-controller'
 import { createCategoriesController } from './app/controllers/categories/create-categories-controller'
 
 export const router = Router()
 
-router.get('/categories', listCategoriesController)
+router.get('/categories', findAllCategoriesController)
 
 router.post('/categories', createCategoriesController)
 

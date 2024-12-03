@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Category } from '@/app/models/category'
 import type { ICategoryRepository } from '@/app/repositories/category-repository'
 import type { Types } from 'mongoose'
 
