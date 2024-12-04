@@ -1,4 +1,5 @@
 import express from 'express'
+import type { NextFunction, Request, Response } from 'express'
 import mongoose from 'mongoose'
 import { router } from './router'
 import path from 'node:path'
@@ -8,6 +9,13 @@ mongoose
   .then(() => {
     const app = express()
     const PORT = 3333
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    app.use((err: Error, _req: Request, res: Response, _next: NextFunction) => {
+      console.log('### Error Handler')
+      console.log(err)
+      res.sendStatus(500)
+    })
 
     app.use(
       '/uploads',

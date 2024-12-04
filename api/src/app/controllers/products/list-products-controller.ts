@@ -3,15 +3,10 @@ import { ListProductsUseCase } from '@/app/use-cases/products/list-products-use-
 import type { Request, Response } from 'express'
 
 export async function findAllProductsController(req: Request, res: Response) {
-  try {
-    const productRepository = new MongoProductRepository()
-    const listProductsUseCase = new ListProductsUseCase(productRepository)
+  const productRepository = new MongoProductRepository()
+  const listProductsUseCase = new ListProductsUseCase(productRepository)
 
-    const products = await listProductsUseCase.execute()
+  const products = await listProductsUseCase.execute()
 
-    res.json(products)
-  } catch (error) {
-    console.log(error)
-    res.status(500).json({ message: 'Internal Server Error' })
-  }
+  res.json(products)
 }
