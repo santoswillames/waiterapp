@@ -11,13 +11,7 @@ export class ListCategoriesUseCase {
   constructor(private categoryRepository: ICategoryRepository) {}
 
   async execute(): Promise<IListCategoryUseCaseResponse[]> {
-    const response = await this.categoryRepository.findAll()
-
-    const categories = response.map(({ _id, name, icon }) => ({
-      _id,
-      name,
-      icon,
-    }))
+    const categories = await this.categoryRepository.findAll()
 
     return categories
   }

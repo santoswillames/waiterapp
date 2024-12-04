@@ -1,17 +1,6 @@
-import type { Types } from 'mongoose'
-
-export interface ICreateCategory {
-  name: string
-  icon: string
-}
-
-export interface ICategory {
-  _id: Types.ObjectId
-  name: string
-  icon: string
-}
+import type { CategorySchemaType, CategoryType } from '../models/category'
 
 export interface ICategoryRepository {
-  create(data: ICreateCategory): Promise<ICategory>
-  findAll(): Promise<ICategory[]>
+  create(data: CategorySchemaType): Promise<CategoryType>
+  findAll(): Promise<CategoryType[]>
 }

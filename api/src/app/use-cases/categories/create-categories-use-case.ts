@@ -20,16 +20,10 @@ export class CreateCategoryUseCase {
     nameRequest,
     iconRequest,
   }: ICreateCategoryUseCaseRequest): Promise<ICreateCategoryUseCaseResponse> {
-    const { _id, name, icon } = await this.categoryRepository.create({
+    const category = await this.categoryRepository.create({
       name: nameRequest,
       icon: iconRequest,
     })
-
-    const category = {
-      _id,
-      name,
-      icon,
-    }
 
     return category
   }
