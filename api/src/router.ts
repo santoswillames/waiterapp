@@ -4,6 +4,7 @@ import { createCategoriesController } from './app/controllers/categories/create-
 import { findAllProductsController } from './app/controllers/products/list-products-controller'
 import { createProductsController } from './app/controllers/products/create-products-controller'
 import { upload } from './app/middlewares/multer'
+import { findProductsByCategoryController } from './app/controllers/products/list-products-by-category-controller'
 
 export const router = Router()
 
@@ -15,9 +16,7 @@ router.get('/products', findAllProductsController)
 
 router.post('/products', upload.single('image'), createProductsController)
 
-router.get('/categories/:categoryId/products', (req, res) => {
-  res.send('Produtos por categoria')
-})
+router.get('/categories/:categoryId/products', findProductsByCategoryController)
 
 router.get('/orders', (req, res) => {
   res.send('Pedidos')
