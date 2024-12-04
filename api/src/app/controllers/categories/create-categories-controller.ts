@@ -12,8 +12,8 @@ export async function createCategoriesController(req: Request, res: Response) {
     )
 
     const category = await createCategoriesUseCase.execute({
-      iconRequest: icon,
-      nameRequest: name,
+      icon,
+      name,
     })
 
     res.status(201).json(category)
