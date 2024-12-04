@@ -21,7 +21,7 @@ export async function createProductsController(req: Request, res: Response) {
       price: Number(price),
       category,
       imagePath,
-      ingredients: JSON.parse(ingredients),
+      ingredients: ingredients ? JSON.parse(ingredients) : [],
     })
 
     res.status(201).json(product)

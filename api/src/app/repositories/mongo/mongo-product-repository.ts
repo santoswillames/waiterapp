@@ -14,4 +14,10 @@ export class MongoProductRepository implements IProductRepository {
 
     return products
   }
+
+  async findByCategoryId(categotyId: string): Promise<ProductType[]> {
+    const products = await Product.find().where('category').equals(categotyId)
+
+    return products
+  }
 }
