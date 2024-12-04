@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import { findAllCategoriesController } from './app/controllers/categories/list-categories-controller'
 import { createCategoriesController } from './app/controllers/categories/create-categories-controller'
+import { findAllProductsController } from './app/controllers/products/list-products-controller'
 
 export const router = Router()
 
@@ -8,9 +9,7 @@ router.get('/categories', findAllCategoriesController)
 
 router.post('/categories', createCategoriesController)
 
-router.get('/products', (req, res) => {
-  res.send('Produtos')
-})
+router.get('/products', findAllProductsController)
 
 router.post('/products', (req, res) => {
   res.send(' Create Produtos')
