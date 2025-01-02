@@ -35,6 +35,8 @@ const orderSchema = new Schema({
 
 export type OrderSchemaType = InferSchemaType<typeof orderSchema>
 
+export type PartialOrderSchemaType = Pick<OrderSchemaType, 'products' | 'table'>
+
 export interface OrderType extends OrderSchemaType {
   _id: Types.ObjectId
 }

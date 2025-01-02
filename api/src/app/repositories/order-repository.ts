@@ -1,4 +1,4 @@
-import type { OrderSchemaType, OrderType } from '../models/order'
+import type { OrderType, PartialOrderSchemaType } from '../models/order'
 
 export interface IDataOrderUpdate {
   id: string
@@ -6,7 +6,7 @@ export interface IDataOrderUpdate {
 }
 
 export interface IOrderRepository {
-  create(data: OrderSchemaType): Promise<OrderType>
+  create(data: PartialOrderSchemaType): Promise<OrderType>
   findAll(): Promise<OrderType[]>
   updateById(data: IDataOrderUpdate): Promise<void>
   delete(orderId: string): Promise<void>

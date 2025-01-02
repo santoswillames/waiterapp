@@ -1,5 +1,5 @@
 import type { ProductType } from '@/app/models/product'
-import type { IProductRepository } from '@/app/repositories/product-rpository'
+import type { IProductRepository } from '@/app/repositories/product-repository'
 
 export class ListProductsByCategoryUseCase {
   constructor(private categoryRepository: IProductRepository) {}
